@@ -1,0 +1,9 @@
+#!/bin/bash
+
+code=$1
+message=$2
+
+lowercase=`head -n1 $code`
+uppercase=`tail -n1 $code`
+
+cat $message| tr "[a-z]" "[$lowercase]"|tr "[A-Z]" "[$uppercase]"

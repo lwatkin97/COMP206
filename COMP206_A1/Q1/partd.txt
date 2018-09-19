@@ -1,0 +1,6 @@
+c=`ls | cat crocodile.dat | cut -f1 -d " "| tr -d 'a-zA-Z'`
+new_c=$(($c + 2))
+
+
+sed -i "" "s/$c/$new_c/" crocodile.dat
+

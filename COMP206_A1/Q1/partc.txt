@@ -1,0 +1,12 @@
+#!/bin/bash
+
+e=`ls | cat elephant.dat | cut -f1 -d " "| tr -d 'a-zA-Z'`
+h=`ls | cat hippopotamus.dat | cut -f1 -d " "| tr -d 'a-zA-Z'`
+
+if [ $e -gt $h ]
+then
+	echo Elephant is heavier
+else
+	echo Hippo is heavier
+fi
+

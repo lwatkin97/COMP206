@@ -1,0 +1,53 @@
+a) The output is:
+104kg
+364kg
+450kg
+1000kg
+1800kg
+4900kg
+29000kg
+110000kg
+
+I discovered this by running cat *.dat| cut -f1 -d " "|sort -n which reads the data files and sorts the data from the first argument separated by a space.
+
+b) The output is:
+
+24m
+13.5m
+6m
+5.15m
+4.5m
+4m
+2.1m
+2.0m
+
+I discovered this by running cat *.dat| cut -f2 -d " "|sort -n -r which reads the data files and sorts the data in reverse from the second argument separated by a space.
+
+c) The elephant is heavier. I discovered this by running the bash file:
+
+#!/bin/bash
+
+e=`ls | cat elephant.dat | cut -f1 -d " "| tr -d 'a-zA-Z'`
+h=`ls | cat hippopotamus.dat | cut -f1 -d " "| tr -d 'a-zA-Z'`
+
+if [ $e -gt $h ]
+then
+	echo Elephant is heavier
+else
+	echo Hippo is heavier
+fi
+
+d) I changed the weight by getting the weight as an integer, adding two, and then replacing the term with the new weight without creating a copy of the file.
+
+c=`ls | cat crocodile.dat | cut -f1 -d " "| tr -d 'a-zA-Z'`
+new_c=$(($c + 2))
+
+sed -i "" "s/$c/$new_c/" crocodile.dat
+
+e) I removed the giraffe by running the command ls|grep giraffe|xargs rm. It outputs the files with giraffe in the name, and then takes the standard output and removes the files.
+
+
+
+
+
+ 
