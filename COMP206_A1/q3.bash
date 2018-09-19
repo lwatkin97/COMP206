@@ -7,7 +7,7 @@ changeName=`echo "$parent"|tr '/' '_'`
 
 outputFile="$changeName.jpg"
 
-convert -append=$files $outputFile
+convert -append $files $outputFile
 
 
 
