@@ -1,7 +1,7 @@
 
 parent=$1
 
-files=`ls -lR $parent| sort -k8| grep .jpg| cut -f11 -d " "`
+files=`find $parent -name "*.jpg"| xargs ls -rt| xargs basename`
 
 changeName=`echo "$parent"|tr '/' '_'`
 
