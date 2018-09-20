@@ -1,3 +1,5 @@
+Note about Q1 Answers: All answers are assuming you are already in the Q1 Directory 
+
 a) The output is:
 104kg
 364kg
